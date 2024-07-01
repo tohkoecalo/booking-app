@@ -2,8 +2,6 @@ package com.booking.booking_app.entities;
 
 import jakarta.persistence.*;
 
-import java.util.Collection;
-
 @Entity
 @Table(name = "photos")
 public class Photo {
@@ -12,14 +10,34 @@ public class Photo {
     @Column(name = "photo_id")
     private Long photoId;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "places",
-            joinColumns = { @JoinColumn(name = "place_id") },
-            inverseJoinColumns = { @JoinColumn(name = "photo_id") }
-    )
-    private Collection<Place> places;
+    @ManyToOne
+    @JoinColumn(name = "place_id")
+    private Place place;
 
     @Column(name = "url", nullable = false, columnDefinition="TEXT")
     private String url;
+
+    public Long getPhotoId() {
+        return photoId;
+    }
+
+    public void setPhotoId(Long photoId) {
+        this.photoId = photoId;
+    }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }
