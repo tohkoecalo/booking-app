@@ -1,4 +1,4 @@
-package com.booking.booking_app.entities;
+package com.booking.booking_app.db.model;
 
 import jakarta.persistence.*;
 
@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name = "bookings")
 public class Booking {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "booking_id")
     private Long bookingId;
 

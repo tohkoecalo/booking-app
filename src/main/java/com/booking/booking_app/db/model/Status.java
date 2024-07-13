@@ -1,4 +1,4 @@
-package com.booking.booking_app.entities;
+package com.booking.booking_app.db.model;
 
 import jakarta.persistence.*;
 
@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "statuses")
 public class Status {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "status_id")
     private Long statusId;
 

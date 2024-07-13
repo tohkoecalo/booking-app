@@ -1,10 +1,10 @@
-package com.booking.booking_app.entities;
+package com.booking.booking_app.db.model;
 
 import jakarta.persistence.*;
 
 public class Review {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "review_id")
     private Long reviewId;
 
